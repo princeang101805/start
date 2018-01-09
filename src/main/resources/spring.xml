@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:p="http://www.springframework.org/schema/p"  
+	   xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xsi:schemaLocation=
+       	   "http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+           >  
+	<!-- <bean id="student" class="com.wza.maven.pojo.po.Student">
+		<property name="id" value="01"></property>
+		<property name="name" value="dell"></property>	
+	</bean> -->
+	<!-- 创建ref引用的phone实体类	 -->
+	<!-- <bean id="student" class="com.wza.maven.pojo.po.Student">
+		<property name="id" value="01"></property>
+		<property name="name" value="dell"></property>
+		<property name="phone" ref="phone"></property>	
+	</bean>  -->
+	<!-- <bean id="myFactory" class="com.wza.maven.factory.MyFactory" factory-method="init"></bean>
+	<bean id="phone" class="com.wza.maven.pojo.po.Phone">
+		<property name="name" value="iphonex"></property>
+		<property name="price" value="8500"></property>
+	</bean>-->
+	<!-- <bean id="student" class="com.wza.maven.pojo.po.Student" p:id="123" p:name="wza" p:phone-ref="phone"/> -->  
+	<!-- <bean id="phone" class="com.wza.maven.pojo.po.Phone">
+		<property name="name" value="iphonex"></property>
+		<property name="price" value="8500"></property>
+	</bean>
+	<bean id="student1" class="com.wza.maven.pojo.po.Student" p:phone-ref="phone">
+		<property name="id" value="#{phone.name}"></property>
+		<property name="name" value="#{student.name}"></property>	
+	</bean> -->
+	<!-- <bean id="map" class="com.wza.maven.map.MapEntry">
+		<property name="map">
+			<map>
+				<entry key="name" value="asi"/>
+				<entry key="age" value="24"/>
+				<entry key="sex" value="female"/>
+			</map>
+		</property>
+	</bean> -->
+	<context:component-scan base-package="com.wza.maven.pojo.po"></context:component-scan>
+	<context:component-scan base-package="com.wza.maven.pojo.service"></context:component-scan>
+</beans>  
